@@ -1,0 +1,68 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="style.css"> 
+</head> 
+<body> 
+    <header>
+        <h1>Практическа работа по разделу 3</h1>
+    </header>
+    
+    <section class="audio-section">
+        <h2>Музыкальная Песенка</h2> 
+        <audio id="audioPlayer" controls> 
+            <source src="media/song.mp3" type="audio/mp3"> 
+            ваш браузер не поддерживает аудио элемент. 
+        </audio>     
+        <div class="audio-controls"> 
+            <button onclick="playAudio()">▶ воспроизвести</button> 
+            <button onclick="pauseAudio()">⏸ пауза</button> 
+            <input type="range" id="audioVolume" min="0" max="1" step="0.1" value="1" onchange="setAudioVolume()"> 
+        </div>
+    </section>
+
+    <section class="video-section">
+        <h2>видео</h2> 
+        <video id="videoPlayer" width="600" controls> 
+            <source src="media/video.mp4" type="video/mp4"> 
+            ваш браузер не поддерживает видео элемент. 
+        </video> 
+        <div class="video-controls"> 
+            <button onclick="playVideo()">▶ воспроизвести</button> 
+            <button onclick="pauseVideo()">⏸ пауза</button> 
+            <input type="range" id="videoVolume" min="0" max="1" step="0.1" value="1" onchange="setVideoVolume()"> 
+        </div>
+    </section>
+    
+    <section class="animation-section">
+        <h2>анимация</h2> 
+        <canvas id="animationCanvas" width="600" height="400"></canvas> 
+        <button id="toggleAnimationBtn" onclick="toggleAnimation()">остановить анимацию</button> 
+    </section>
+    
+    <section class="image-processing-section">
+        <h2>обработка фотки</h2> 
+        <input type="file" id="imageLoader" accept="image/*" /> 
+        <canvas id="imageCanvas" width="500" height="400"></canvas> 
+
+        <div class="controls"> 
+            <button onclick="applySepia()">Применить сепию</button> 
+            <button onclick="cropImage()">Обрезать</button> 
+            <button onclick="downloadImage()">Скачать</button> 
+        </div> 
+
+        <div class="resize-controls"> 
+            <h3>размер изображения</h3> 
+            <label for="widthInput">ширина:</label> 
+            <input type="number" id="widthInput" value="500" /> 
+            <label for="heightInput">высота:</label> 
+            <input type="number" id="heightInput" value="400" /> 
+            <button onclick="resizeImage()">применить</button> 
+        </div> 
+    </section>
+    
+    <script src="script.js"></script> 
+</body> 
+</html>
